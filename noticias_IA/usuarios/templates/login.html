@@ -1,6 +1,5 @@
 {% extends "base.html" %}
 
-{% load socialaccount %}
 {% load static %}
 
 {% block content %}
@@ -14,9 +13,5 @@
 
     <hr>
 
-    <h3>Iniciar sesión con Google</h3>
-    <a href="{% provider_login_url 'google' %}">
-        <img src="{% static 'Images/google_signin_button.png' %}" alt="Iniciar sesión con Google" />
-    </a>
 {% endblock %}
 
