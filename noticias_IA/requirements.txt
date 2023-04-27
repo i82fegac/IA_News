@@ -1,0 +1,4 @@
+#Dependecias a instalar
+
+Django==2.2.12
+requests==2.22.0
