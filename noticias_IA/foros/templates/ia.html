@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Preguntas sobre Inteligencia Artificial</h1>
+    <div class="preguntas">
+        {% for pregunta in preguntas %}
+            <div class="pregunta">
+                <h2><a href="{{ pregunta.link }}" target="_blank">{{ pregunta.title }}</a></h2>
+                <p>{{ pregunta.score }} votos | {{ pregunta.answer_count }} respuestas</p>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

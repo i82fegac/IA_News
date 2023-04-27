@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Artículos</h1>
+    {% for articulo in articulos %}
+        <div>
+            <h2><a href="{% url 'detalle_articulo' pk=articulo.pk %}">{{ articulo.titulo }}</a></h2>
+            <p>Autor: {{ articulo.autor.username }}</p>
+            <p>Publicado el {{ articulo.fecha_publicacion }}</p>
+        </div>
+    {% endfor %}
+    {% if user.is_authenticated %}
+        <p><a href="{% url 'crear_articulo' %}">Crear artículo</a></p>
+    {% endif %}
+{% endblock %}

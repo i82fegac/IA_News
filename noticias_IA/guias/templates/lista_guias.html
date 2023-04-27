@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Guías</h2>
+    <ul>
+        {% for guia in guias %}
+            <li>
+                <h3>{{ guia.titulo }}</h3>
+                <p>{{ guia.contenido|truncatechars:100 }}</p>
+                <small>{{ guia.fecha_publicacion }}</small>
+            </li>
+        {% endfor %} 
+    </ul>
+{% endblock %}

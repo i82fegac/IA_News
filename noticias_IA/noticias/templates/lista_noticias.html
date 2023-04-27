@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Noticias sobre Inteligencia Artificial</h1>
+    <div class="noticias">
+        {% for noticia in noticias %}
+            <div class="noticia">
+                <h2><a href="{{ noticia.url }}" target="_blank">{{ noticia.title }}</a></h2>
+                <p>{{ noticia.description }}</p>
+                <p><small>Publicado el {{ noticia.publishedAt }}</small></p>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

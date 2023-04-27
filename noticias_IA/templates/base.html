@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IA News</title>
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="{% url 'lista_articulos' %}" class="navbar-brand">IA News</a>
+            <ul class="navbar-nav">
+                <li><a href="{% url 'lista_articulos' %}">Artículos</a></li>
+                <li><a href="{% url 'lista_temas' %}">Foros</a></li>
+                <li><a href="{% url 'lista_noticias' %}">Noticias</a></li>
+                <li><a href="{% url 'lista_tutoriales' %}">Tutoriales</a></li>
+                <li><a href="{% url 'lista_guias' %}">Guias</a></li>
+
+
+                {% if user.is_authenticated %}
+                    <li><a href="{% url 'logout' %}">Cerrar sesión ({{ user.username }})</a></li>
+                {% else %}
+                    <li><a href="{% url 'registro' %}">Registrarse</a></li>
+                    <li><a href="{% url 'login' %}">Iniciar sesión</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% block content %}
+        <!-- El contenido específico de cada plantilla se insertará aquí -->
+        {% endblock %}
+    </main>
+    <footer>
+        <p>&copy; IA News 2023</p>
+    </footer>
+
+</body>
+</html>

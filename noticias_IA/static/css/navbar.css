@@ -1,0 +1,43 @@
+/* navbar.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    background-color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    height: 60px;
+}
+
+.navbar-brand {
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+.navbar-nav {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-nav li {
+    margin-left: 2rem;
+}
+
+.navbar-nav li a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+}
+
+.navbar-nav li a:hover {
+    color: #ccc;
+}

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Temas</h1>
+    <a href="{% url 'preguntas_ia' %}">Preguntas sobre IA de Stack Exchange</a>
+    <p></p>
+    <ul>
+        {% for tema in temas %}
+            <li><a href="{% url 'detalle_tema' tema.id %}">{{ tema.titulo }}</a> - {{ tema.descripcion }} - {{ tema.fecha_creacion }}</li>
+        {% endfor %}
+    </ul>
+    {% if user.is_authenticated %}
+        <a href="{% url 'crear_tema' %}">Crear nuevo tema</a>
+    {% endif %}
+
+{% endblock %}

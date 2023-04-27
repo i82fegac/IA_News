@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Tutoriales</h2>
+    <ul>
+        {% for tutorial in tutoriales %}
+            <li>
+                <h3>{{ tutorial.titulo }}</h3>
+                <p>{{ tutorial.contenido|truncatechars:100 }}</p>
+                <small>{{ tutorial.fecha_publicacion }}</small>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
